@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  margin:0;
+	background:url('flipbg.jpg');
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 15%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+.grid-container {
+margin-left:210px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 5px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+
+  font-size: 30px;
+}
+
+</style>
+</head>
+<body>
+<header>
+<h1>Auto Admin</h1>
+</header>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">Courses</a></li>
+  <li><a href="#contact">Enrollments</a></li>
+  <li><a href="#about">Students</a></li>
+    <li><a href="#about">Deptartment</a></li>
+	  <li><a href="#about">Office Assignment</a></li>
+	    <li><a href="#about">Course Assignment</a></li>
+</ul>
+
+ 
+<div class="grid-container">
+  <div>First Name</div>
+  <div>Last Name</div>
+  <div>DOB</div>  
+  <div></div>
+  <div>Santhosh</div>
+  <div>S</div>  
+  <div>03/07/1999</div>
+  <div><a href="#">Delete</a></div>
+    <div>Sanjay</div>
+  <div>N</div>
+  <div>23/9/1999</div>  
+  <div><a href="#">Delete</a></div>
+  <div>John</div>
+  <div>N</div>  
+  <div>12/2/1999</div>
+  <div><a href="#">Delete</a></div>
+    <div>Rohan</div>
+  <div>N</div>  
+  <div>9/12/1999</div>
+  <div><a href="#">Delete</a></div>
+    <div>Ranjan</div>
+  <div>Shetty</div>  
+  <div>1/2/1999</div>
+  <div><a href="#">Delete</a></div>
+    <div>Abc</div>
+  <div>d</div>  
+  <div>1/2/2000</div>
+  <div><a href="#">Delete</a></div>
+      <div>Sathish</div>
+  <div>S</div>  
+  <div>12/4/1999</div>
+  <div><a href="#">Delete</a></div>
+      <div>Bolt</div>
+  <div>N</div>  
+  <div>16/5/1999</div>
+  <div><a href="#">Delete</a></div>
+</div>
+</body>
+</html>

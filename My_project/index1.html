@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="m.css">
+<script type="text/javascript">
+ function validateForm()
+  {
+      var first_name=document.getElementById("Name").value;
+      var age=document.getElementById("Age").value;
+      var gender= document.getElementsByName("gender");
+      var yob=document.getElementById("YOB").value;
+      var adress=document.getElementById("ad").value;
+      var e = document.getElementById("state");
+      var strUser = e.options[e.selectedIndex].value;
+      var no=document.getElementById("phone").value;
+      var x=document.getElementById("e").value;
+      var uid=document.getElementById("UID").value;
+      var pwd=document.getElementById("PWD").value;
+      var cpwd=document.getElementById("CPWD").value;
+      var regularExpression = /^(?=.*[\d])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,16}$/;
+      if(first_name=="")
+      {
+          alert("Name field empty");
+	      Name.focus();
+          return false;
+	  }
+      else
+      {
+          for(i=0;i<first_name.length;i++)
+		  {
+          if(!((first_name.charAt(i)>='a'&&first_name.charAt(i)<='z')||(first_name.charAt(i)>='A'&&first_name.charAt(i)<='Z')))
+		  {
+              alert("enter alphabets only in name field");
+	          document.getElementById("Name").value="";
+    	      Name.focus();
+			  return false;
+	      }
+		  }
+      }
+	  if(first_name.length<3||first_name.length>10)
+	  {
+          alert("username size should be between 3 and 10 ");
+          document.getElementById("Name").value="";
+	      Name.focus();
+          return false;
+	  }
+	 
+    if ( (gender[0].checked == false ) && ( gender[1].checked == false ) )
+    {
+        alert ( "Please choose your Gender: Male or Female" );
+        return false;
+	}
+   if(yob=="")
+   {
+       alert("Year of birth field empty");
+	   YOB.focus();
+       return false;
+   }
+   else if(2019-age!=yob)
+	{
+		alert("enter exact year of birth")
+		YOB.focus();
+		document.getElementById("YOB").value="";
+		return false;
+}
+   if(adress=="")
+   {
+       alert("Address field empty");
+       return false;
+   }
+   if(no=="")
+   {
+       alert("phone field empty");
+       return false;
+   }
+    if(no.length>10||no.length<10)
+   {
+       alert("invalid phone number");
+       return false;
+   }
+   else
+   {
+      for(i=0;i<no.length;i++)
+	  {
+      if(!(no.charAt(i)>='0'&&no.charAt(i)<='9'))
+      {
+          alert("enter   only numbers in phone field");
+          return false;
+	  }
+	  }
+   }
+   if(strUser==0)
+    {
+       alert("select your state");
+       return false;
+	}
+    if(x=="")
+    {
+        alert("email field empty");
+        return false;
+   }
+   else
+   {
+        var atpos=x.indexOf("@");
+        var dotpos=x.lastIndexOf(".");
+        if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+        {
+            alert("Not a valid e-mail address");
+            return false;
+    }
+	document.getElementById("UID").value=document.getElementById("e").value;
+    PWD.focus();
+    }
+
+    if(pwd=="")
+    {
+        alert("password field is empty");
+        PWD.focus()
+        return false;
+	}
+   if (!regularExpression.test(pwd))
+   {
+       alert("enter pwd with minimum one number,special symbol and 8 or more characters");
+       PWD.focus();
+       return false;
+	}
+    document.getElementById("right_password").innerHTML = 'Strong Password';
+    if (cpwd=="")
+    {
+        alert("please confirm your password");
+        CPWD.focus();
+        return false;
+	}
+    if(cpwd!=pwd)
+    {
+        alert("not matching , please enter right passowrd");
+        CPWD.focus();
+        return false;
+	}
+    alert ("validation success");
+    document.write("Validation success");
+    return true;
+    document.getElementById("reset").onclick = function() {
+   document.getElementById("number").value = "";
+};
+ }
+</script>
+</head>
+  <body>
+
+    <div class="container">
+
+
+      <table border="0" >
+<form  name="UserReg" action="User.html" method="post"  onSubmit="return validateForm()">
+<h1>Sign Up</h1></br></br>
+   <tr>
+       <td height="28" align="right">First Name :&nbsp;</td>
+       <td height="28"><input type="text"  id="Name" id="number" size="25"   /></td>
+   </tr></br></br>
+ <tr>
+       <td height="28" align="right">Last Name :&nbsp;</td>
+       <td height="28"><input type="text"  id="Name" id="number" size="25"   /></td>
+   </tr></br></br>
+     <tr>
+       <td height="28"  align="right">Email_id :&nbsp;</td>
+      <td height="28"><input type="text" id="e" id="number" size="25"  /></td>
+  </tr>
+   </br></br>
+
+<tr>
+       <td height="28" align="right">Password  :&nbsp;<div id="right_password" ></div</td>
+      <td height="28"><input type="password" id="PWD" id="number" size="25"  /><td>
+  </tr></br></br>
+<tr>
+       <td height="28"  align="right">Conf.Pwd  :&nbsp;</td>
+      <td height="28"><input type="password" id="CPWD" id="number" size="25"  /><td>
+  </tr></br></br>
+<tr>
+       <td height="28"  align="right">Date :&nbsp;</td>
+      <td height="28"><input type="date" id="CPWD" id="number" size="25"  /><td>
+  </tr></br></br>
+ <tr>
+       <td height="28"  align="right">Gender  :&nbsp;</td>
+      <td height="28"><input type="radio" name="gender" value="male"> Male
+	 <input type="radio" name="gender" value="female"> Female</td>
+  </tr></br></br>
+  
+
+
+ 
+
+
+   
+
+
+  <tr>
+       <td height="35"></td>
+       <td height="35"><input type="submit" value="Submit" name="UserSigUp"  /></td>
+       <td height="35"><input type="reset" value="Reset" name="reset"  /></td>
+
+   </tr></br></br>
+</form>
+</table>
+
+    </div>
+  </body>
+</html>
